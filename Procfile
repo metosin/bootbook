@@ -1,1 +1,1 @@
-web: java $JVM_OPTS -cp target/bootbook.jar $PORT
+web: java $JVM_OPTS -jar target/bootbook.jar $PORT
