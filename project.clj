@@ -93,8 +93,9 @@
                                         :elide-asserts  true
                                         :pretty-print   false}}}}
 
-  :uberjar-name "bootbook.jar"
-  :auto-clean false
+  :uberjar-name      "bootbook.jar"
+  :auto-clean        false
+  :min-lein-version  "2.5.1"
 
   :aliases {"develop" ["do" "clean" ["pdo" ["figwheel"] ["less4j" "auto"]]]
             "uberjar" ["with-profile" "uberjar" "do" ["cljsbuild" "once" "adv"] ["less4j" "once"] "uberjar"]})
