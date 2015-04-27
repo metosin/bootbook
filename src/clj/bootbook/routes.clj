@@ -2,10 +2,10 @@
   (:require [bidi.bidi]
             [bidi.ring]
             [bootbook.index :refer [index-response]]
-            [bootbook.session :as session]))
+            [bootbook.books :as books]))
 
 (def routes ["" {"/"    {:get (constantly index-response)}
-                 "/api" {"/session"  session/routes}}])
+                 "/api" {"/books" books/routes}}])
 
 (def handler (-> routes
                  bidi.bidi/compile-route

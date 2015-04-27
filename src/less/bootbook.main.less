@@ -15,6 +15,8 @@ html {
 body {
   color:            @color;
   background:       @bkg-color;
+  padding:          0px;
+  margin:           0px;
   display:          flex;
   flex-direction:   column;
   align-items:      center;
@@ -23,18 +25,66 @@ body {
   align-items:      stretch;
 }
 
-.nav {
+.nav-bar {
   color:            @nav-color;
   background:       @nav-bkg-color;
   flex-grow:        1;
   display:          flex;
   flex-direction:   row;
   justify-content:  flex-start;
-  .home {
-
+  ul {
+    list-style-type:        none;
+    padding:                0px;
+    li {
+      display:              inline-block;
+      padding:              3px 6px 3px 6px;
+      a, a:visited {
+        color:              @nav-color;
+        text-decoration:    none;
+        &:hover {
+          text-decoration:  underline;
+        }
+      }
+    }
+  }
+  .brand {
+    font-size:     150%;
+    margin-right:  2rem;
+    margin-left:   1rem;
   }
 }
 
-.body {
+.search {
   flex-grow:        1;
+  margin:           2rem 5rem 2rem 5rem;
+  input {
+    padding:        0.5rem;
+    font-size:      250%;
+    width:          100%;
+    border-radius:  1rem;
+    outline:        none;
+    border:         1px;
+  }
+}
+
+.books {
+  flex-grow:        1;
+  margin:           2rem 5rem 2rem 5rem;
+  .book {
+    margin-bottom:  1rem;
+    .title {
+      font-style:   italic;
+      font-size:    150%;
+    }
+    .langs {
+      margin-left:     1rem;
+      span {
+        font-size:     60%;
+        border-radius: 0.5rem;
+        background:    #8e8;
+        padding:       0.4rem;
+        margin:        0 0.1rem;
+      }
+    }
+  }
 }

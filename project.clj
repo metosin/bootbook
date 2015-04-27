@@ -61,35 +61,34 @@
                    :resource-paths ["target/generated"]
                    :injections [(require 'flare.clojure-test)
                                 (flare.clojure-test/install!)]}
-             :uberjar {:resource-paths  ["target/cljsbuild-adv"]
-                       :less  {:compression true}
+             :uberjar {:resource-paths  ["target/adv"]
+                       :less  {:compression true
+                               :target-path "target/adv/public/css"}
                        :main  bootbook.main
                        :aot   [bootbook.main]}}
 
   :less {:source-paths  ["src/less"]
-         :target-path   "target/generated/static/css"
+         :target-path   "target/generated/public/css"
          :source-map    true}
 
-  :figwheel {:http-server-root  "static"
+  :figwheel {:http-server-root  "public"
              :server-port       3449
-             :css-dirs          ["target/generated/static/css"]
+             :css-dirs          ["target/generated/public/css"]
              :repl              false
              :server-logfile    "target/figwheel-logfile.log"}
 
   :cljsbuild {:builds {:dev {:source-paths ["src/cljs" "src/cljc" "src/dev-cljs"]
                              :compiler {:main            "bootbook.ui.figwheel"
                                         :asset-path      "js/out"
-                                        :output-to       "target/generated/static/js/bootbook.js"
-                                        :output-dir      "target/generated/static/js/out"
+                                        :output-to       "target/generated/public/js/bootbook.js"
+                                        :output-dir      "target/generated/public/js/out"
                                         :source-map      true
                                         :optimizations   :none
                                         :cache-analysis  true
                                         :pretty-print    true}}
                        :adv {:source-paths ["src/cljs" "src/cljc"]
                              :compiler {:main           "bootbook.ui.main"
-                                        :output-to      "target/cljsbuild-adv/js/bootbook.js"
-                                        :source-map     "target/cljsbuild-adv/js/bootbook.js.map"
-                                        :output-dir     "target/cljsbuild-adv-out"
+                                        :output-to      "target/adv/public/js/bootbook.js"
                                         :optimizations  :advanced
                                         :elide-asserts  true
                                         :pretty-print   false}}}}
