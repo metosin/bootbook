@@ -1,10 +1,10 @@
 (defproject bootbook "0.0.0-SNAPSHOT"
   :dependencies [[org.clojure/clojure "1.7.0-beta1"]
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
-                 [org.clojure/tools.reader "0.9.1"]
+                 [org.clojure/tools.reader "0.9.2"]
 
                  ; Common libs:
-                 [prismatic/schema "0.4.0"]
+                 [prismatic/schema "0.4.1"]
                  [prismatic/plumbing "0.4.2"]
                  [metosin/potpuri "0.2.2"]
 
@@ -25,24 +25,24 @@
                  [clj-time "0.9.0"]
 
                  ; Client:
-                 [org.clojure/clojurescript "0.0-3208"]
+                 [org.clojure/clojurescript "0.0-3211"]
                  [reagent "0.5.0"]
                  [com.domkm/silk "0.0.4"]
                  [cljs-http "0.1.30" :exclusions [com.cemerick/austin]]
 
                  ; Assets
-                 [org.webjars/bootstrap "3.3.2-1"]
+                 [org.webjars/bootstrap "3.3.2-1" :exclusions [org.webjars/jquery]]
                  [org.webjars/bootswatch-paper "3.3.1+2"]
                  [org.webjars/font-awesome "4.3.0-1"]
                  [org.webjars/es5-shim "4.0.6"]
 
                  ; Logging: use logback with slf4j, redirect JUL, JCL and Log4J:
                  [org.clojure/tools.logging "0.3.1"]
-                 [ch.qos.logback/logback-classic "1.1.2"]
-                 [org.slf4j/slf4j-api "1.7.10"]
-                 [org.slf4j/jul-to-slf4j "1.7.10"]        ; JUL to SLF4J
-                 [org.slf4j/jcl-over-slf4j "1.7.10"]      ; JCL to SLF4J
-                 [org.slf4j/log4j-over-slf4j "1.7.10"]]   ; Log4j to SLF4J
+                 [ch.qos.logback/logback-classic "1.1.3"]
+                 [org.slf4j/slf4j-api "1.7.12"]
+                 [org.slf4j/jul-to-slf4j "1.7.12"]        ; JUL to SLF4J
+                 [org.slf4j/jcl-over-slf4j "1.7.12"]      ; JCL to SLF4J
+                 [org.slf4j/log4j-over-slf4j "1.7.12"]]   ; Log4j to SLF4J
 
   :source-paths ["src/clj" "src/cljs" "src/cljc"]
   :test-paths ["test/clj" "test/cljs" "test/cljc"]
