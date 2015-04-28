@@ -57,7 +57,8 @@
                              [lein-cljsbuild "1.0.5"]
                              [deraen/lein-less4j "0.2.1"]
                              [lein-figwheel "0.2.7" :exclusions [org.clojure/clojurescript]]
-                             [com.cemerick/clojurescript.test "0.3.3"]]
+                             [com.cemerick/clojurescript.test "0.3.3"]
+                             [lein2-eclipse "2.0.0" :exclusions [org.clojure/clojure]]]
                    :resource-paths ["target/generated"]
                    :injections [(require 'flare.clojure-test)
                                 (flare.clojure-test/install!)]}
